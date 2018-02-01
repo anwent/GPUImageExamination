@@ -5,4 +5,5 @@
 
 #import "THImageMovieWriter.h"
 #import "THImageMovie.h"
-#import "ZGPUImageMovieWriter.h"
+//#import "ZGPUImageMovieWriter.h"
+

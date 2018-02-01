@@ -43,11 +43,11 @@ class DrawViewController: UIViewController {
 
     var emojiLabel: EditLabel?
     
-    public var moviePath: URL {
-//        return Bundle.main.url(forResource: "x", withExtension: "mov")!
-//        return Bundle.main.url(forResource: "abc", withExtension: "mp4")!
-        return Bundle.main.url(forResource: "h", withExtension: "mp4")!
-    }
+//    public var moviePath: URL {
+////        return Bundle.main.url(forResource: "x", withExtension: "mov")!
+////        return Bundle.main.url(forResource: "abc", withExtension: "mp4")!
+//        return Bundle.main.url(forResource: "h", withExtension: "mp4")!
+//    }
 
     override func loadView() {
         super.loadView()
@@ -69,10 +69,7 @@ class DrawViewController: UIViewController {
 
         emojiLabel = EditLabel(content: "😄")
         view.addSubview(view: emojiLabel)
-        
-        
-        let rrr = THImageMovieWriter.degressFromVideoFile(with: moviePath)
-        print("R: --- ", rrr)
+
 
     }
 

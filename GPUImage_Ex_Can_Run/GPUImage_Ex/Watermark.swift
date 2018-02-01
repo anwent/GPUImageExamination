@@ -8,10 +8,6 @@
 
 import UIKit
 
-//protocol WatermarkLevel {
-//    var level: Int { get set }
-//}
-
 struct Watermark {
     var draw: [Watermark_Draw]?
     var emoji: [Watermark_Emoji]?

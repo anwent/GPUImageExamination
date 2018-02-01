@@ -10,8 +10,6 @@
 		D909557A200EF3640040EEE1 /* GPUImageFilter_ENUM in Resources */ = {isa = PBXBuildFile; fileRef = D9095579200EF3640040EEE1 /* GPUImageFilter_ENUM */; };
 		D909557C200EF6FC0040EEE1 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D909557B200EF6FC0040EEE1 /* OpenGLES.framework */; };
 		D909557E200EFBE40040EEE1 /* GPUImage_Document.md in Resources */ = {isa = PBXBuildFile; fileRef = D909557D200EFBE40040EEE1 /* GPUImage_Document.md */; };
-		D9095584200F29080040EEE1 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9095583200F29070040EEE1 /* Pixel.swift */; };
-		D9095586200F2F8A0040EEE1 /* Resolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9095585200F2F8A0040EEE1 /* Resolution.swift */; };
 		D9095592200F31A00040EEE1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9095588200F31A00040EEE1 /* Utilities.swift */; };
 		D9095593200F31A00040EEE1 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9095589200F31A00040EEE1 /* DrawView.swift */; };
 		D9095594200F31A00040EEE1 /* smooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909558A200F31A00040EEE1 /* smooth.swift */; };
@@ -22,21 +20,14 @@
 		D9095599200F31A00040EEE1 /* DrawCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9095590200F31A00040EEE1 /* DrawCommands.swift */; };
 		D909559A200F31A00040EEE1 /* Modulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9095591200F31A00040EEE1 /* Modulation.swift */; };
 		D909559C200F323C0040EEE1 /* DrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909559B200F323C0040EEE1 /* DrawViewController.swift */; };
-		D909559E200F39AC0040EEE1 /* ShowImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909559D200F39AC0040EEE1 /* ShowImageViewController.swift */; };
 		D90955A0200F3B540040EEE1 /* Watermark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D909559F200F3B540040EEE1 /* Watermark.swift */; };
 		D90955AC200F471B0040EEE1 /* EditLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90955A5200F471B0040EEE1 /* EditLabel.swift */; };
-		D90955B1201073AF0040EEE1 /* GPUImageExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90955B0201073AF0040EEE1 /* GPUImageExport.swift */; };
-		D90955B3201074270040EEE1 /* GPUImageFilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90955B2201074270040EEE1 /* GPUImageFilterDelegate.swift */; };
 		D91C58DB2021CC3500A0C863 /* x.mov in Resources */ = {isa = PBXBuildFile; fileRef = D91C58DA2021CC3500A0C863 /* x.mov */; };
 		D9228F6B2015E291004CAE1F /* THImageMovieManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D9228F682015E291004CAE1F /* THImageMovieManager.m */; };
 		D9228F6C2015E291004CAE1F /* THImageMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = D9228F692015E291004CAE1F /* THImageMovie.m */; };
 		D9228F6E2015E3FD004CAE1F /* abc.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D9228F6D2015E3FD004CAE1F /* abc.mp4 */; };
 		D95753C0200DCA930067CED3 /* img.png in Resources */ = {isa = PBXBuildFile; fileRef = D95753BF200DCA930067CED3 /* img.png */; };
 		D959C5F72011C17300F76F5E /* Apart.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D959C5F62011C17300F76F5E /* Apart.mp3 */; };
-		D959C5FA2011CDC600F76F5E /* VideoReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959C5F92011CDC600F76F5E /* VideoReader.swift */; };
-		D959C5FD2011D71200F76F5E /* MovieWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959C5FC2011D71200F76F5E /* MovieWriter.swift */; };
-		D959C5FF2011D79E00F76F5E /* ImageMovieWriterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D959C5FE2011D79E00F76F5E /* ImageMovieWriterDelegate.swift */; };
-		D960755B2022E48600EDC14B /* h.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = D960755A2022E48600EDC14B /* h.mp4 */; };
 		D9932CB720182B460062EB36 /* THImageMovieWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D9932CB520182B450062EB36 /* THImageMovieWriter.m */; };
 		D9BFB5C8200CB43F00582D2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFB5C7200CB43F00582D2E /* AppDelegate.swift */; };
 		D9BFB5CA200CB43F00582D2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFB5C9200CB43F00582D2E /* ViewController.swift */; };
@@ -45,7 +36,6 @@
 		D9BFB5D2200CB43F00582D2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9BFB5D0200CB43F00582D2E /* LaunchScreen.storyboard */; };
 		D9BFB5DD200CB43F00582D2E /* GPUImage_ExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFB5DC200CB43F00582D2E /* GPUImage_ExTests.swift */; };
 		D9BFB5E8200CB43F00582D2E /* GPUImage_ExUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFB5E7200CB43F00582D2E /* GPUImage_ExUITests.swift */; };
-		D9F1A7B1201704850008F5EE /* ZGPUImageMovieWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D9F1A7B0201704850008F5EE /* ZGPUImageMovieWriter.m */; };
 		DFA1C21F5549ABB389BF479E /* Pods_GPUImage_Ex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7732FC19E3688047EEA57D53 /* Pods_GPUImage_Ex.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,8 +63,6 @@
 		D9095579200EF3640040EEE1 /* GPUImageFilter_ENUM */ = {isa = PBXFileReference; lastKnownFileType = text; path = GPUImageFilter_ENUM; sourceTree = "<group>"; };
 		D909557B200EF6FC0040EEE1 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		D909557D200EFBE40040EEE1 /* GPUImage_Document.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = GPUImage_Document.md; sourceTree = "<group>"; };
-		D9095583200F29070040EEE1 /* Pixel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
-		D9095585200F2F8A0040EEE1 /* Resolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolution.swift; sourceTree = "<group>"; };
 		D9095588200F31A00040EEE1 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		D9095589200F31A00040EEE1 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		D909558A200F31A00040EEE1 /* smooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = smooth.swift; sourceTree = "<group>"; };
@@ -85,11 +73,8 @@
 		D9095590200F31A00040EEE1 /* DrawCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawCommands.swift; sourceTree = "<group>"; };
 		D9095591200F31A00040EEE1 /* Modulation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modulation.swift; sourceTree = "<group>"; };
 		D909559B200F323C0040EEE1 /* DrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawViewController.swift; sourceTree = "<group>"; };
-		D909559D200F39AC0040EEE1 /* ShowImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowImageViewController.swift; sourceTree = "<group>"; };
 		D909559F200F3B540040EEE1 /* Watermark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Watermark.swift; sourceTree = "<group>"; };
 		D90955A5200F471B0040EEE1 /* EditLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLabel.swift; sourceTree = "<group>"; };
-		D90955B0201073AF0040EEE1 /* GPUImageExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUImageExport.swift; sourceTree = "<group>"; };
-		D90955B2201074270040EEE1 /* GPUImageFilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUImageFilterDelegate.swift; sourceTree = "<group>"; };
 		D91C58DA2021CC3500A0C863 /* x.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = x.mov; sourceTree = "<group>"; };
 		D9228F652015E290004CAE1F /* THImageMovieManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THImageMovieManager.h; sourceTree = "<group>"; };
 		D9228F672015E291004CAE1F /* THImageMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THImageMovie.h; sourceTree = "<group>"; };
@@ -98,10 +83,6 @@
 		D9228F6D2015E3FD004CAE1F /* abc.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = abc.mp4; sourceTree = "<group>"; };
 		D95753BF200DCA930067CED3 /* img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img.png; sourceTree = "<group>"; };
 		D959C5F62011C17300F76F5E /* Apart.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Apart.mp3; sourceTree = "<group>"; };
-		D959C5F92011CDC600F76F5E /* VideoReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoReader.swift; sourceTree = "<group>"; };
-		D959C5FC2011D71200F76F5E /* MovieWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieWriter.swift; sourceTree = "<group>"; };
-		D959C5FE2011D79E00F76F5E /* ImageMovieWriterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMovieWriterDelegate.swift; sourceTree = "<group>"; };
-		D960755A2022E48600EDC14B /* h.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = h.mp4; sourceTree = "<group>"; };
 		D9910AE02015B6A30070E484 /* GPUImage_Ex-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GPUImage_Ex-Bridging-Header.h"; sourceTree = "<group>"; };
 		D9932CB520182B450062EB36 /* THImageMovieWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THImageMovieWriter.m; sourceTree = "<group>"; };
 		D9932CB620182B460062EB36 /* THImageMovieWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THImageMovieWriter.h; sourceTree = "<group>"; };
@@ -118,8 +99,6 @@
 		D9BFB5E3200CB43F00582D2E /* GPUImage_ExUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPUImage_ExUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9BFB5E7200CB43F00582D2E /* GPUImage_ExUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUImage_ExUITests.swift; sourceTree = "<group>"; };
 		D9BFB5E9200CB43F00582D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9F1A7AF201704850008F5EE /* ZGPUImageMovieWriter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZGPUImageMovieWriter.h; sourceTree = "<group>"; };
-		D9F1A7B0201704850008F5EE /* ZGPUImageMovieWriter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZGPUImageMovieWriter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				D91C58DA2021CC3500A0C863 /* x.mov */,
-				D960755A2022E48600EDC14B /* h.mp4 */,
 				D9228F6D2015E3FD004CAE1F /* abc.mp4 */,
 				D909558B200F31A00040EEE1 /* Command */,
 				D9095588200F31A00040EEE1 /* Utilities.swift */,
@@ -200,16 +178,6 @@
 				D90955A5200F471B0040EEE1 /* EditLabel.swift */,
 			);
 			path = EmojiDrawer;
-			sourceTree = "<group>";
-		};
-		D959C5F82011CDBC00F76F5E /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				D959C5F92011CDC600F76F5E /* VideoReader.swift */,
-				D959C5FC2011D71200F76F5E /* MovieWriter.swift */,
-				D959C5FE2011D79E00F76F5E /* ImageMovieWriterDelegate.swift */,
-			);
-			path = Video;
 			sourceTree = "<group>";
 		};
 		D9BFB5BB200CB43F00582D2E = {
@@ -246,26 +214,18 @@
 				D9932CB620182B460062EB36 /* THImageMovieWriter.h */,
 				D9932CB520182B450062EB36 /* THImageMovieWriter.m */,
 				D9910AE02015B6A30070E484 /* GPUImage_Ex-Bridging-Header.h */,
-				D959C5F82011CDBC00F76F5E /* Video */,
 				D90955A1200F471B0040EEE1 /* EmojiDrawer */,
 				D9095587200F31A00040EEE1 /* FreehandDrawing */,
 				D959C5F62011C17300F76F5E /* Apart.mp3 */,
 				D95753BF200DCA930067CED3 /* img.png */,
 				D9BFB5C7200CB43F00582D2E /* AppDelegate.swift */,
 				D9BFB5C9200CB43F00582D2E /* ViewController.swift */,
-				D9095583200F29070040EEE1 /* Pixel.swift */,
+				D909559B200F323C0040EEE1 /* DrawViewController.swift */,
+				D909559F200F3B540040EEE1 /* Watermark.swift */,
 				D9BFB5CB200CB43F00582D2E /* Main.storyboard */,
 				D9BFB5CE200CB43F00582D2E /* Assets.xcassets */,
 				D9BFB5D0200CB43F00582D2E /* LaunchScreen.storyboard */,
 				D9BFB5D3200CB43F00582D2E /* Info.plist */,
-				D9095585200F2F8A0040EEE1 /* Resolution.swift */,
-				D909559B200F323C0040EEE1 /* DrawViewController.swift */,
-				D909559D200F39AC0040EEE1 /* ShowImageViewController.swift */,
-				D909559F200F3B540040EEE1 /* Watermark.swift */,
-				D90955B0201073AF0040EEE1 /* GPUImageExport.swift */,
-				D90955B2201074270040EEE1 /* GPUImageFilterDelegate.swift */,
-				D9F1A7AF201704850008F5EE /* ZGPUImageMovieWriter.h */,
-				D9F1A7B0201704850008F5EE /* ZGPUImageMovieWriter.m */,
 			);
 			path = GPUImage_Ex;
 			sourceTree = "<group>";
@@ -400,7 +360,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D959C5F72011C17300F76F5E /* Apart.mp3 in Resources */,
-				D960755B2022E48600EDC14B /* h.mp4 in Resources */,
 				D909557E200EFBE40040EEE1 /* GPUImage_Document.md in Resources */,
 				D9BFB5D2200CB43F00582D2E /* LaunchScreen.storyboard in Resources */,
 				D95753C0200DCA930067CED3 /* img.png in Resources */,
@@ -488,30 +447,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9BFB5CA200CB43F00582D2E /* ViewController.swift in Sources */,
-				D9095584200F29080040EEE1 /* Pixel.swift in Sources */,
 				D9228F6C2015E291004CAE1F /* THImageMovie.m in Sources */,
-				D959C5FA2011CDC600F76F5E /* VideoReader.swift in Sources */,
 				D9095598200F31A00040EEE1 /* FreehandDraw.swift in Sources */,
 				D9095593200F31A00040EEE1 /* DrawView.swift in Sources */,
-				D909559E200F39AC0040EEE1 /* ShowImageViewController.swift in Sources */,
-				D90955B3201074270040EEE1 /* GPUImageFilterDelegate.swift in Sources */,
 				D909559C200F323C0040EEE1 /* DrawViewController.swift in Sources */,
-				D9095586200F2F8A0040EEE1 /* Resolution.swift in Sources */,
 				D909559A200F31A00040EEE1 /* Modulation.swift in Sources */,
-				D90955B1201073AF0040EEE1 /* GPUImageExport.swift in Sources */,
 				D90955AC200F471B0040EEE1 /* EditLabel.swift in Sources */,
 				D90955A0200F3B540040EEE1 /* Watermark.swift in Sources */,
 				D9095599200F31A00040EEE1 /* DrawCommands.swift in Sources */,
-				D959C5FF2011D79E00F76F5E /* ImageMovieWriterDelegate.swift in Sources */,
 				D9095594200F31A00040EEE1 /* smooth.swift in Sources */,
 				D9095595200F31A00040EEE1 /* LineDrawCommand.swift in Sources */,
 				D9228F6B2015E291004CAE1F /* THImageMovieManager.m in Sources */,
 				D9095596200F31A00040EEE1 /* ComposedCommand.swift in Sources */,
 				D9095592200F31A00040EEE1 /* Utilities.swift in Sources */,
 				D9BFB5C8200CB43F00582D2E /* AppDelegate.swift in Sources */,
-				D959C5FD2011D71200F76F5E /* MovieWriter.swift in Sources */,
 				D9095597200F31A00040EEE1 /* CircleDrawCommand.swift in Sources */,
-				D9F1A7B1201704850008F5EE /* ZGPUImageMovieWriter.m in Sources */,
 				D9932CB720182B460062EB36 /* THImageMovieWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
