@@ -10,8 +10,7 @@ import UIKit
 import GPUImage
 import AVFoundation
 
-public let NORMAL_SIZE_VERTICAL: CGSize = CGSize(width: 480, height: 640)
-public let NORMAL_SIZE_HORIZONTAL: CGSize = CGSize(width: 640, height: 480)
+
 
 // https://stackoverflow.com/questions/23679688/ios-save-gpuimage-video
 // audio http://tuohuang.info/gpuimage-movie-writer-merging-all-audio-tracks-from-multiple-movies#.WmBrX5P1VTY
@@ -135,35 +134,35 @@ class ViewController: UIViewController {
     }
     // 获取视频音轨
 
-    var assetAudioReader: AVAssetReader?
-    var assetAudioReaderTrackOutput: AVAssetReaderAudioMixOutput?
+//    var assetAudioReader: AVAssetReader?
+//    var assetAudioReaderTrackOutput: AVAssetReaderAudioMixOutput?
     
-    func setupAudioTrack(_ track: AVAssetTrack) {
-        let mixComposition = AVMutableComposition()
-        
-        let compositionCommentaryTrack = mixComposition.addMutableTrack(
-            withMediaType: .audio,
-            preferredTrackID: kCMPersistentTrackID_Invalid
-        )
-        
-        do {
-            try compositionCommentaryTrack?.insertTimeRange(
-                CMTimeRange(start: kCMTimeZero, end: track.asset!.duration),
-                of: track,
-                at: kCMTimeZero)
-        } catch let error {
-            assert(true, error.localizedDescription)
-        }
-        
-        do {
-            assetAudioReader = try AVAssetReader(asset: mixComposition)
-        } catch let error {
-            assert(true, error.localizedDescription)
-        }
-        
-        assetAudioReaderTrackOutput = AVAssetReaderAudioMixOutput(audioTracks: mixComposition.tracks(withMediaType: .audio), audioSettings: nil)
-        assetAudioReader?.add(assetAudioReaderTrackOutput!)
-    }
+//    func setupAudioTrack(_ track: AVAssetTrack) {
+//        let mixComposition = AVMutableComposition()
+//
+//        let compositionCommentaryTrack = mixComposition.addMutableTrack(
+//            withMediaType: .audio,
+//            preferredTrackID: kCMPersistentTrackID_Invalid
+//        )
+//
+//        do {
+//            try compositionCommentaryTrack?.insertTimeRange(
+//                CMTimeRange(start: kCMTimeZero, end: track.asset!.duration),
+//                of: track,
+//                at: kCMTimeZero)
+//        } catch let error {
+//            assert(true, error.localizedDescription)
+//        }
+//
+//        do {
+//            assetAudioReader = try AVAssetReader(asset: mixComposition)
+//        } catch let error {
+//            assert(true, error.localizedDescription)
+//        }
+//
+//        assetAudioReaderTrackOutput = AVAssetReaderAudioMixOutput(audioTracks: mixComposition.tracks(withMediaType: .audio), audioSettings: nil)
+//        assetAudioReader?.add(assetAudioReaderTrackOutput!)
+//    }
 
     private func createWatermarks(naturalSize: CGSize?) -> UIView? {
         guard let `naturalSize` = naturalSize else {
@@ -201,11 +200,11 @@ class ViewController: UIViewController {
     
 }
 
-extension GPUImageMovieWriter {
-    public func finishVideoRecordingWithCompletionHandler(_ handler: @escaping ()->Swift.Void) {
-        runSynchronouslyOnContextQueue(movieWriterContext) { [unowned self] in
-            runAsynchronouslyOnContextQueue(self.movieWriterContext, handler)
-        }
-    }
-}
+//extension GPUImageMovieWriter {
+//    public func finishVideoRecordingWithCompletionHandler(_ handler: @escaping ()->Swift.Void) {
+//        runSynchronouslyOnContextQueue(movieWriterContext) { [unowned self] in
+//            runAsynchronouslyOnContextQueue(self.movieWriterContext, handler)
+//        }
+//    }
+//}
 

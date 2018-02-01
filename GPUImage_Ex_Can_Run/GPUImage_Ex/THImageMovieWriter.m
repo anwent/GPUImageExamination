@@ -40,7 +40,7 @@ NSString *const kTHImageColorSwizzlingFragmentShaderString = SHADER_STRING
 @property(nonatomic, strong) NSArray *movies;
 //@property(nonatomic, strong) THImageMovie *th_movie;
 @property(nonatomic, strong) NSURL *basicMovieURL;
-@property(nonatomic, strong) NSURL *bgmURL;
+@property(nullable, nonatomic, strong) NSURL *bgmURL;
 @property(nonatomic, strong) AVAssetReader *assetAudioReader;
 @property(nonatomic, strong) AVAssetReaderAudioMixOutput *assetAudioReaderTrackOutput;
 
@@ -270,10 +270,12 @@ NSString *const kTHImageColorSwizzlingFragmentShaderString = SHADER_STRING
         [audioTracks addObject:movieTrack.firstObject];
     }
     
-    AVAsset *audioAsset = [AVAsset assetWithURL:_bgmURL];
-    NSArray *audioTrack = [audioAsset tracksWithMediaType:AVMediaTypeAudio];
-    [audioTracks addObject:audioTrack.firstObject];
-
+    if (_bgmURL) {
+        AVAsset *audioAsset = [AVAsset assetWithURL:_bgmURL];
+        NSArray *audioTrack = [audioAsset tracksWithMediaType:AVMediaTypeAudio];
+        [audioTracks addObject:audioTrack.firstObject];
+    }
+    
     AVMutableComposition* mixComposition = [AVMutableComposition composition];
     
     for(AVAssetTrack *track in audioTracks){
