@@ -36,6 +36,7 @@
 		D9BFB5D2200CB43F00582D2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9BFB5D0200CB43F00582D2E /* LaunchScreen.storyboard */; };
 		D9BFB5DD200CB43F00582D2E /* GPUImage_ExTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFB5DC200CB43F00582D2E /* GPUImage_ExTests.swift */; };
 		D9BFB5E8200CB43F00582D2E /* GPUImage_ExUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9BFB5E7200CB43F00582D2E /* GPUImage_ExUITests.swift */; };
+		D9DED358202304D0003B4C6A /* Generate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DED357202304D0003B4C6A /* Generate.swift */; };
 		DFA1C21F5549ABB389BF479E /* Pods_GPUImage_Ex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7732FC19E3688047EEA57D53 /* Pods_GPUImage_Ex.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		D9BFB5E3200CB43F00582D2E /* GPUImage_ExUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GPUImage_ExUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9BFB5E7200CB43F00582D2E /* GPUImage_ExUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUImage_ExUITests.swift; sourceTree = "<group>"; };
 		D9BFB5E9200CB43F00582D2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9DED357202304D0003B4C6A /* Generate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				D9BFB5CE200CB43F00582D2E /* Assets.xcassets */,
 				D9BFB5D0200CB43F00582D2E /* LaunchScreen.storyboard */,
 				D9BFB5D3200CB43F00582D2E /* Info.plist */,
+				D9DED357202304D0003B4C6A /* Generate.swift */,
 			);
 			path = GPUImage_Ex;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 			files = (
 				D9BFB5CA200CB43F00582D2E /* ViewController.swift in Sources */,
 				D9228F6C2015E291004CAE1F /* THImageMovie.m in Sources */,
+				D9DED358202304D0003B4C6A /* Generate.swift in Sources */,
 				D9095598200F31A00040EEE1 /* FreehandDraw.swift in Sources */,
 				D9095593200F31A00040EEE1 /* DrawView.swift in Sources */,
 				D909559C200F323C0040EEE1 /* DrawViewController.swift in Sources */,

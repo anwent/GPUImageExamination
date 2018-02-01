@@ -49,12 +49,8 @@ extern NSString *const kTHImageColorSwizzlingFragmentShaderString;
 @property(nonatomic, assign, getter = isPaused) BOOL paused;
 @property(nonatomic, retain) GPUImageContext *movieWriterContext;
 
-// Initialization and teardown
-- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize basicURL:(NSURL *)url bgmURL:(NSURL *)bgmUrl;
-- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize fileType:(NSString *)newFileType outputSettings:(NSMutableDictionary *)outputSettings basicURL:(NSURL *)url bgmURL:(NSURL *)bgmUrl;
-
-- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize movies:(NSArray *)movies;
-- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize fileType:(NSString *)newFileType outputSettings:(NSDictionary *)outputSettings movies:(NSArray *)movies;
+- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize movies:(NSArray *)movies bgm:(NSURL *)bgmURL;
+- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize fileType:(NSString *)newFileType outputSettings:(NSDictionary *)outputSettings movies:(NSArray *)movies bgm:(NSURL *)bgmURL;
 
 - (void)setHasAudioTrack:(BOOL)hasAudioTrack audioSettings:(NSDictionary *)audioOutputSettings;
 

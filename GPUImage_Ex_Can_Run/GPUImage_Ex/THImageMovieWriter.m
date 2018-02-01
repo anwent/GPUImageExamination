@@ -38,7 +38,7 @@ NSString *const kTHImageColorSwizzlingFragmentShaderString = SHADER_STRING
 
 
 @property(nonatomic, strong) NSArray *movies;
-@property(nonatomic, strong) THImageMovie *th_movie;
+//@property(nonatomic, strong) THImageMovie *th_movie;
 @property(nonatomic, strong) NSURL *basicMovieURL;
 @property(nonatomic, strong) NSURL *bgmURL;
 @property(nonatomic, strong) AVAssetReader *assetAudioReader;
@@ -80,95 +80,12 @@ NSString *const kTHImageColorSwizzlingFragmentShaderString = SHADER_STRING
 #pragma mark -
 #pragma mark Initialization and teardown
 
-- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize basicURL:(NSURL *)url bgmURL:(NSURL *)bgmUrl
+- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize movies:(NSArray *)movies bgm:(NSURL *)bgmURL;
 {
-//    return [self initWithMovieURL:newMovieURL size:newSize basicURL:url];
-    return [self initWithMovieURL:newMovieURL size:newSize fileType:AVFileTypeQuickTimeMovie outputSettings:nil basicURL:url bgmURL:bgmUrl];
+    return [self initWithMovieURL:newMovieURL size:newSize fileType:AVFileTypeQuickTimeMovie outputSettings:nil movies:movies bgm:bgmURL];
 }
 
-- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize fileType:(NSString *)newFileType outputSettings:(NSMutableDictionary *)outputSettings basicURL:(NSURL *)url bgmURL:(NSURL *)bgmUrl;
-{
-    if (!(self = [super init]))
-    {
-        return nil;
-    }
-    
-    THImageMovie *m = [[THImageMovie alloc] initWithURL:_basicMovieURL];
-    self.movies = @[m];
-    
-    _bgmURL = bgmUrl;
-    _basicMovieURL = url;
-    _shouldInvalidateAudioSampleWhenDone = NO;
-    
-    self.enabled = YES;
-    alreadyFinishedRecording = NO;
-    videoEncodingIsFinished = NO;
-    audioEncodingIsFinished = NO;
-    
-    videoSize = newSize;
-    movieURL = newMovieURL;
-    fileType = newFileType;
-    startTime = kCMTimeInvalid;
-    _encodingLiveVideo = [[outputSettings objectForKey:@"EncodingLiveVideo"] isKindOfClass:[NSNumber class]] ? [[outputSettings objectForKey:@"EncodingLiveVideo"] boolValue] : YES;
-    previousFrameTime = kCMTimeNegativeInfinity;
-    previousAudioTime = kCMTimeNegativeInfinity;
-    inputRotation = kGPUImageNoRotation;
-    
-    _movieWriterContext = [[GPUImageContext alloc] init];
-    [_movieWriterContext useSharegroup:[[[GPUImageContext sharedImageProcessingContext] context] sharegroup]];
-    
-    runSynchronouslyOnContextQueue(_movieWriterContext, ^{
-        [_movieWriterContext useAsCurrentContext];
-        
-        if ([GPUImageContext supportsFastTextureUpload])
-        {
-            colorSwizzlingProgram = [_movieWriterContext programForVertexShaderString:kGPUImageVertexShaderString fragmentShaderString:kGPUImagePassthroughFragmentShaderString];
-        }
-        else
-        {
-            colorSwizzlingProgram = [_movieWriterContext programForVertexShaderString:kGPUImageVertexShaderString fragmentShaderString:kTHImageColorSwizzlingFragmentShaderString];
-        }
-        
-        if (!colorSwizzlingProgram.initialized)
-        {
-            [colorSwizzlingProgram addAttribute:@"position"];
-            [colorSwizzlingProgram addAttribute:@"inputTextureCoordinate"];
-            
-            if (![colorSwizzlingProgram link])
-            {
-                NSString *progLog = [colorSwizzlingProgram programLog];
-                NSLog(@"Program link log: %@", progLog);
-                NSString *fragLog = [colorSwizzlingProgram fragmentShaderLog];
-                NSLog(@"Fragment shader compile log: %@", fragLog);
-                NSString *vertLog = [colorSwizzlingProgram vertexShaderLog];
-                NSLog(@"Vertex shader compile log: %@", vertLog);
-                colorSwizzlingProgram = nil;
-                NSAssert(NO, @"Filter shader link failed");
-            }
-        }
-        
-        colorSwizzlingPositionAttribute = [colorSwizzlingProgram attributeIndex:@"position"];
-        colorSwizzlingTextureCoordinateAttribute = [colorSwizzlingProgram attributeIndex:@"inputTextureCoordinate"];
-        colorSwizzlingInputTextureUniform = [colorSwizzlingProgram uniformIndex:@"inputImageTexture"];
-        
-        [_movieWriterContext setContextShaderProgram:colorSwizzlingProgram];
-        
-        glEnableVertexAttribArray(colorSwizzlingPositionAttribute);
-        glEnableVertexAttribArray(colorSwizzlingTextureCoordinateAttribute);
-    });
-    
-    [self initializeMovieWithOutputSettings:outputSettings];
-    
-    return self;
-}
-
-
-- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize movies:(NSArray *)movies;
-{
-    return [self initWithMovieURL:newMovieURL size:newSize fileType:AVFileTypeQuickTimeMovie outputSettings:nil movies:movies];
-}
-
-- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize fileType:(NSString *)newFileType outputSettings:(NSMutableDictionary *)outputSettings movies:(NSArray *)pMovies;
+- (id)initWithMovieURL:(NSURL *)newMovieURL size:(CGSize)newSize fileType:(NSString *)newFileType outputSettings:(NSMutableDictionary *)outputSettings movies:(NSArray *)pMovies bgm:(NSURL *)bgmURL;
 {
     if (!(self = [super init]))
     {
@@ -176,8 +93,9 @@ NSString *const kTHImageColorSwizzlingFragmentShaderString = SHADER_STRING
     }
     
     self.movies = pMovies;
-    NSURL *url = [[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"mp4"];
-    self.th_movie = [[THImageMovie alloc] initWithURL:url];
+    self.bgmURL = bgmURL;
+//    NSURL *url = [[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"mp4"];
+//    self.th_movie = [[THImageMovie alloc] initWithURL:url];
     _shouldInvalidateAudioSampleWhenDone = NO;
     
     self.enabled = YES;
@@ -344,16 +262,15 @@ NSString *const kTHImageColorSwizzlingFragmentShaderString = SHADER_STRING
  *  设置读取音频信息的Reader
  */
 - (void)setupAudioAssetReader {
-    
     NSMutableArray *audioTracks = [NSMutableArray array];
     
-    NSURL *movie = [[NSBundle mainBundle] URLForResource:@"abc" withExtension:@"mp4"];
-    AVAsset *movieAsset = [AVAsset assetWithURL:movie];
-    NSArray *movieTrack = [movieAsset tracksWithMediaType:AVMediaTypeAudio];
-    [audioTracks addObject:movieTrack.firstObject];
-
-    NSURL *audio = [[NSBundle mainBundle] URLForResource:@"Apart" withExtension:@"mp3"];
-    AVAsset *audioAsset = [AVAsset assetWithURL:audio];
+    THImageMovie *playMovie = [_movies firstObject];
+    if (playMovie) {
+        NSArray *movieTrack = [[playMovie asset] tracksWithMediaType:AVMediaTypeAudio];
+        [audioTracks addObject:movieTrack.firstObject];
+    }
+    
+    AVAsset *audioAsset = [AVAsset assetWithURL:_bgmURL];
     NSArray *audioTrack = [audioAsset tracksWithMediaType:AVMediaTypeAudio];
     [audioTracks addObject:audioTrack.firstObject];
 

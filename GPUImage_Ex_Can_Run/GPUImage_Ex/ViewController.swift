@@ -72,7 +72,10 @@ class ViewController: UIViewController {
             let movieURL: URL = URL(fileURLWithPath: pathToMovie)
             print("导出路径:", pathToMovie)
             let outputSize: CGSize = (movieSize?.width ?? 0)/(movieSize?.height ?? 0) < 1 ? NORMAL_SIZE_VERTICAL : NORMAL_SIZE_HORIZONTAL
-            movieWriter = THImageMovieWriter(movieURL: movieURL, size: outputSize, movies: [movieFile as Any])
+            
+            let bgm = Bundle.main.url(forResource: "Apart", withExtension: "mp3")!
+            
+            movieWriter = THImageMovieWriter(movieURL: movieURL, size: outputSize, movies: [movieFile as Any], bgm: bgm)
 
             // 初始化 group
             group = GPUImageFilterGroup()
