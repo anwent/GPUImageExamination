@@ -76,11 +76,11 @@ class ViewController: UIViewController {
             
             movieWriter = THImageMovieWriter(movieURL: movieURL, size: outputSize, movies: [movieFile as Any], bgm: bgm)
 
-            // 初始化 group
+//             初始化 group
             group = GPUImageFilterGroup()
 
 
-            // 添加水印
+//             添加水印
             let img_element: GPUImageUIElement = GPUImageUIElement(view: contentView)
 
             // 反色滤镜
@@ -104,6 +104,21 @@ class ViewController: UIViewController {
             filter?.addTarget(group)
             
 //            filter?.setInputRotation(kGPUImageRotateRight, at: 0)
+            
+//            // 只有水印
+//            movieFile?.addTarget(filter)
+//            filter?.addTarget(blendFilter)
+//            img_element.addTarget(blendFilter)
+//            blendFilter.addTarget(movieWriter)
+            
+            
+            
+            
+//            // 只有滤镜
+//            movieFile?.addTarget(filter)
+//            filter?.addTarget(colorInvert)
+//            colorInvert.addTarget(movieWriter)
+            
 
             movieFile?.startProcessing()
             movieWriter?.startRecording()
